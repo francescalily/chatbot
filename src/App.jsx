@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import "./App.css";
 
 function App() {
@@ -9,13 +8,21 @@ function App() {
     {
       role: "system",
       content:
-        "You are the best source of information about travelling. You will help guide users have the best travel experience by asking questions about their preferences regarding holidays and tailoring their experience with you in a fun engaging way.",
+        "You are the best source of information about travelling. You will help guide users to have the best travel experience by asking questions about their preferences regarding holidays and tailoring their experience with you in a fun engaging way.",
     },
   ]);
+
+  const handleSendMessage = (messageContent) => {
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { role: "user", content: messageContent },
+    ]);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const latestUserMessage = messages[messages.length - 1].content;
         const response = await fetch(
           "https://api.openai.com/v1/chat/completions",
           {
@@ -28,8 +35,8 @@ function App() {
             body: JSON.stringify({
               model: "gpt-3.5-turbo",
               messages: [
-                ...messages,
-                { role: "user", content: "This is a test!" },
+                { role: "system", content: messages[0].content },
+                { role: "user", content: latestUserMessage },
               ],
               temperature: 0.7,
             }),
@@ -37,28 +44,54 @@ function App() {
         );
 
         if (!response.ok) {
-          throw new Error("Error fetching data")
+          throw new Error("Error fetching data");
         }
         const responseData = await response.json();
-        console.log(responseData)
+        const assistantReplyContent =
+          responseData.choices[0]?.message?.content || "No response";
 
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { role: "assistant", content: assistantReplyContent },
+        ]);
+        console.log(responseData);
       } catch (error) {
         console.error("Error fetching data:", error);
-        // Handle errors here
       }
     };
 
     fetchData();
   }, [API_KEY, messages]);
 
-  return <div>
-    {messages.map((message, index) => (
-      <div key={index}>
-        <h3>{message.role}</h3>
-        <p>{message.content}</p>
-        </div>
-    ))}
-  </div>;
+  return (
+    <>
+      <div>
+        {messages.map((message, index) => (
+          <div key={index}>
+            <h3>{message.role}</h3>
+            <p>{message.content}</p>
+          </div>
+        ))}
+      </div>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          const input = e.target.input.value;
+          if (input.trim() !== "") {
+            handleSendMessage(input);
+            e.target.reset();
+          }
+        }}
+      >
+        <input
+          type="text"
+          name="input"
+          placeholder="Type your message ..."
+        />
+        <button type="submit">Ask</button>
+      </form>
+    </>
+  );
 }
 
 export default App;
