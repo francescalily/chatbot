@@ -60,7 +60,9 @@ function App() {
       }
     };
 
-    fetchData();
+    if (messages.length > 1 && messages[messages.length - 1].role === "user") {
+      fetchData();
+    }
   }, [API_KEY, messages]);
 
   return (
