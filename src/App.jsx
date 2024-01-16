@@ -6,7 +6,7 @@ function App() {
 
   const [messages, setMessages] = useState([
     {
-      role: "system",
+      role: "AI Travel Bot",
       content:
         "You are the best source of information about travelling. You will help guide users to have the best travel experience by asking questions about their preferences regarding holidays and tailoring their experience with you in a fun engaging way.",
     },
