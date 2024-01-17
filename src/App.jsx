@@ -65,12 +65,13 @@ function App() {
     }
   }, [API_KEY, messages]);
 
+
   return (
     <>
       <div>
         {messages.map((message, index) => (
           <div key={index}>
-            <h3>{message.role}</h3>
+            <h3>{message.role === 'user' ? 'You' : message.role}</h3>
             <p>{message.content}</p>
           </div>
         ))}
