@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Button } from './components';
+import { IntlProvider } from 'react-intl'
 import "./App.css";
 
 function App() {
@@ -6,7 +8,7 @@ function App() {
 
   const [messages, setMessages] = useState([
     {
-      role: "AI Travel Bot",
+      role: "system",
       content:
         "You are the best source of information about travelling. You will help guide users to have the best travel experience by asking questions about their preferences regarding holidays and tailoring their experience with you in a fun engaging way.",
     },
@@ -33,7 +35,7 @@ function App() {
               Authorization: `Bearer ${API_KEY}`,
             },
             body: JSON.stringify({
-              model: "gpt-3.5-turbo",
+              model: "gpt-4",
               messages: [
                 { role: "system", content: messages[0].content },
                 { role: "user", content: latestUserMessage },
@@ -73,7 +75,11 @@ function App() {
           <div key={index}>
             <h3>{message.role === 'user' ? 'You' : message.role}</h3>
             <p>{message.content}</p>
+            <IntlProvider locale="en">
+
+            </IntlProvider>
           </div>
+          
         ))}
       </div>
       <form
@@ -92,6 +98,7 @@ function App() {
           placeholder="Type your message ..."
         />
         <button type="submit">Ask</button>
+        <Button />
       </form>
     </>
   );
