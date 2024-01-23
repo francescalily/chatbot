@@ -1,0 +1,64 @@
+/* style.css */
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-row {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top:40px;
+    
+    left: 0;
+    width: 100%;
+    background-color: white; /* You can customize the background color */
+    z-index: 1000; /* Adjust the z-index to make sure it appears above other elements */
+  }
+  
+  .nav-row ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-row li {
+    margin: 0 40px; /* Adjust the spacing between the navigation items */
+  }
+  
+  .nav-row a {
+    text-decoration: none;
+    color: white; /* You can customize the text color */
+    font-weight: bold;
+  }
+  
+  /* Add a hover effect if desired */
+  .nav-row a:hover {
+    text-decoration: underline;
+  }
+  
+
+.nav-row a:hover{
+    cursor: pointer;
+    background-color: var(--outline);
+    outline: solid 2px var(--outline);
+    
+}
+
+.nav-row a:visited{
+    color: #00776C;
+    
+   
+
+}
+
+#logo{
+    max-width:100px ;
+    max-height: 100px;
+}
+
+
