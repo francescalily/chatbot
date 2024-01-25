@@ -7,12 +7,8 @@ import styles from './style.module.css'
 export default function Message({ role, content }) {
     return (
         <div className={styles.wrapper}>
-            <div>
-                <img
-                src={role === 'assistant' ? ai : user} 
-                className={styles.avatar} 
-                alt="profile avatar" 
-                />
+            <div className="roleText"  style={{ color: 'black', fontWeight: 'bold' }}>
+                <p>{role === 'assistant' ? "AI" : "You"}</p>
             </div>
             <div>
                 <p>{content}</p>
@@ -20,3 +16,9 @@ export default function Message({ role, content }) {
         </div>
     )
 }
+
+{/* <img
+src={role === 'assistant' ? ai : user} 
+className={styles.avatar} 
+alt="profile avatar" 
+/> */}
