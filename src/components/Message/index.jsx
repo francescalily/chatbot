@@ -9,7 +9,7 @@ export default function Message({ role, content }) {
         <div className={styles.wrapper}>
             <div>
                 <img
-                src={role === 'assistant' ? bot : user} 
+                src={role === 'assistant' ? ai : user} 
                 className={styles.avatar} 
                 alt="profile avatar" 
                 />

@@ -11,6 +11,42 @@ export default function Chat() {
     setInput("");
   };
 
+  const handleSubmit = async () => {
+    const prompt = {
+      role: "user",
+      content: input,
+    };
+
+    setMessages([...messages, prompt]);
+
+    await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [...messages, prompt],
+      }),
+    })
+      .then((data) => data.json())
+      .then((data) => {
+        const res = data.choices[0].message.content;
+        setMessages((messages) => [
+          ...messages,
+          {
+            role: "assistant",
+            content: res,
+          },
+        ]);
+        setHistory((history) => [...history, { question: input, answer: res }]);
+        setInput("");
+      });
+  };
+
+
+
   return (
     <div className="App">
       <div className="Column">
