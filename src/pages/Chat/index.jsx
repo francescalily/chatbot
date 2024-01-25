@@ -27,12 +27,14 @@ export default function Chat() {
       },
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
-        messages: [...messages, prompt],
+        messages: [...messages, prompt, {"role": "system", content: "You are a helpful assistant advising users on where to go on holiday. You really try to get to know the user by asking them questions about where they want to go to find the perfect destination"},]
+        ,
       }),
     })
       .then((data) => data.json())
       .then((data) => {
         const res = data.choices[0].message.content;
+        console.log(res)
         setMessages((messages) => [
           ...messages,
           {
@@ -43,6 +45,7 @@ export default function Chat() {
         setHistory((history) => [...history, { question: input, answer: res }]);
         setInput("");
       });
+      
   };
 
 
@@ -58,7 +61,12 @@ export default function Chat() {
         </div>
         <Input
           value={input}
-          onChange={(e) => setInput(e.target.value)}
+          onChange={(e) => {
+            e.preventDefault();
+            setInput(e.target.value);
+            e.target.value = "";
+          }
+        }
           onClick={input ? handleSubmit : undefined}
         />
       </div>

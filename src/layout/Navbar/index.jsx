@@ -8,7 +8,7 @@ const NavBar = () => {
 
   
   const activeStyle = {
-    outline: "solid 2px #3E8989",
+    textDecoration: "underline",
     backgrounColor: "var(--outline)",
   };
 

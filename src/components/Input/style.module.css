@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: auto 100px;
     height: 60px;
-    border-radius: 10px;
+    border-radius: 30px;
     background-color: #323236;
   }
   
@@ -17,13 +17,17 @@
   
   .btn {
     border: none;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 30px 30px 0;
     font-size: 16px;
     font-weight: bold;
-    background-color: rgb(218, 255, 170);
+    background-color: rgb(
+    83, 129, 230
+    );
   }
   
   .btn:hover {
     cursor: pointer;
-    background-color: rgb(200, 253, 130);
+    background-color:rgb(
+      150, 129, 230
+      );
   }
