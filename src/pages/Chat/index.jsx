@@ -27,7 +27,7 @@ export default function Chat() {
       },
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
-        messages: [...messages, prompt, {"role": "system", content: "You are a helpful assistant advising users on where to go on holiday. You really try to get to know the user by asking them questions about where they want to go to find the perfect destination"},]
+        messages: [...messages, prompt, {"role": "system", content: "You are a helpful assistant advising users on where to go on holiday. You really try to get to know the user by asking them questions about where they want to go to find the perfect destination. Send links to the websites they should visit to book a holiday"},]
         ,
       }),
     })

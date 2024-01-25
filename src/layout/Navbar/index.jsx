@@ -35,6 +35,11 @@ const NavBar = () => {
               Chatbot
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/transcription" style={navActive}>
+              Transcription
+            </NavLink>
+          </li>
     
         </ul>
       </nav>
