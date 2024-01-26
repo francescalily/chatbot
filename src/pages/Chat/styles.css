@@ -10,26 +10,37 @@
 }
 
 .Column {
-  color: grey;
+  color: rbg(224, 222, 222);
   
+}
+
+.ColumnHistory {
+  background-color: black;
+  border-radius: 100px;
 }
 
 .Title {
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 10px;
+  text-decoration: underline;
   color: black;
-  background-color: rgb(
-    83, 129, 230
-    );
   
+}
+
+.TitleHistory {
+  color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  text-decoration: underline;
 }
 
 .Content {
   height: calc(100vh - 250px);
   overflow-y: scroll;
   margin-bottom: 20px;
-border: solid 1px black;
+/* border: solid 1px black; */
 }
 
 ::-webkit-scrollbar {

@@ -70,8 +70,8 @@ export default function Chat() {
           onClick={input ? handleSubmit : undefined}
         />
       </div>
-      <div className="Column">
-        <h3 className="Title">History</h3>
+      <div className="ColumnHistory">
+        <h3 className="TitleHistory">History</h3>
         <div className="Content">
           {history.map((el, i) => {
             return (
