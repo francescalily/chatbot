@@ -11,6 +11,8 @@ export default function Chat() {
     setInput("");
   };
 
+  
+
   const handleSubmit = async () => {
     const prompt = {
       role: "user",
