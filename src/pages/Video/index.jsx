@@ -1,11 +1,15 @@
 import React from 'react'
 import Video from '../../components/Video'
+import VideoData from '../../assets/VideoData'
 
 
 const VideoPage = () => {
   return (
     <div>
-       <Video />
+      {VideoData.map((video, index) => (
+        <Video key={index} video={video}  />
+      ))}
+
     </div>
   )
 }
