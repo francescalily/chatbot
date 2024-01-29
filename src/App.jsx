@@ -17,7 +17,7 @@ function App() {
           <Route path='/about' element={<Pages.About/>}/>
           <Route path='/chatbot' element={<Pages.Chat/>}/>
           <Route path='/transcription' element={<Pages.Transcription/>}/>
-          
+          <Route path='/shop' element={<Pages.ShopPage/>}/>
       </Route>
     </Routes>
     </Router>

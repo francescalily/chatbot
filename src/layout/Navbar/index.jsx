@@ -40,6 +40,12 @@ const NavBar = () => {
               Transcription
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/shop" style={navActive}>
+              Shop
+            </NavLink>
+          </li>
+    
     
         </ul>
       </nav>
