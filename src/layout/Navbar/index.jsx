@@ -45,6 +45,12 @@ const NavBar = () => {
               Shop
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/video" style={navActive}>
+              Video
+            </NavLink>
+          </li>
+    
     
     
         </ul>

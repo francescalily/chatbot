@@ -2,6 +2,8 @@ import React from "react";
 import ItemDescription from "../ItemDescription";
 
 
+
+
 const Shop = ({name, description, price}) => {
     return (
         <div>
