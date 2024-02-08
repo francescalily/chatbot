@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {Message, Input, History, Clear} from "../../components"
 import "./styles.css";
 
+
 export default function Chat() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
@@ -46,6 +47,7 @@ export default function Chat() {
         ]);
         setHistory((history) => [...history, { question: input, answer: res }]);
         setInput("");
+        console.error('Unexpected response structure:', data);
       });
       
   };
