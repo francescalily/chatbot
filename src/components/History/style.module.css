@@ -1,13 +1,13 @@
 
 .wrapper {
-    padding: 20px;
-    margin-bottom: 20px;
+    padding:2px;
+    margin-bottom: 10px;
     border-radius: 10px;
-    background-color: #1b1b1d;
+    border: 1px solid grey;
     color: white;
   }
   
   .wrapper:hover {
     cursor: pointer;
-    background-color: #323236;
+    background-color: grey;
   }

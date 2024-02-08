@@ -11,12 +11,13 @@
 
 .Column {
   color: rbg(224, 222, 222);
-  
+border: 1px solid grey;
+border-radius: 20px;
 }
 
 .ColumnHistory {
-  background-color: black;
-  border-radius: 100px;
+  background-color: #D4D4D2;
+  border-radius: 20px;
 }
 
 .Title {
