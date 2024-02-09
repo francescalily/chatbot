@@ -1,9 +1,11 @@
 import React from "react";
+import { ChatBotTwo } from "../../components";
+import Chat from "../Chat";
 
 const About = () => {
     return (
         <div>
-          <h1>ChatBot Two</h1>
+          <ChatBotTwo />
           
         </div>
       );
