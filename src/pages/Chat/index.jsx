@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Message, Input, History, Clear} from "../../components"
+import {Message, Input, History, Clear, Prompts} from "../../components"
 import "./styles.css";
 
 
@@ -62,7 +62,9 @@ export default function Chat() {
           {messages.map((el, i) => {
             return <Message key={i} role={el.role} content={el.content} />;
           })}
+          <Prompts />
         </div>
+        
         <Input
           value={input}
           onChange={(e) => {
@@ -75,6 +77,7 @@ export default function Chat() {
         />
       </div>
       <div className="ColumnHistory">
+        
         <h3 className="TitleHistory">History</h3>
         <div className="Content">
           {history.map((el, i) => {

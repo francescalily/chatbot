@@ -1,0 +1,10 @@
+.prompt__buttons {
+   display: inline-grid;
+   /* grid-template-columns: auto 20px; */
+   grid-template-columns: auto auto;
+}
+
+.button__one {
+border-color: black;
+border: 1px solid black;
+}

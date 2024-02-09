@@ -7,4 +7,5 @@ export {default as Message} from './Message'
 export {default as Whisper} from './Transcription'
 export {default as Shop} from './Shop'
 export {default as Video} from './Video'
-
+export {default as Prompts} from './Prompts'
+export {default as ChatBotTwo} from './ChatBotTwo'

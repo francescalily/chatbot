@@ -7,7 +7,7 @@ import styles from './style.module.css'
 export default function Message({ role, content }) {
     return (
         <div className={styles.wrapper}>
-            <div className="roleText">
+            <div className={styles.roleText}>
                 <p style={{ color: 'black', fontWeight: 'bold' }}>{role === 'assistant' ? "AI" : "You"}</p>
             </div>
             <div>
