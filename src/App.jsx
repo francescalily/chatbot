@@ -14,7 +14,7 @@ function App() {
     <Routes>
       <Route path="/" element={<NavBar/>}>
           <Route index element={<Pages.Home/>}/>
-          <Route path='/about' element={<Pages.About/>}/>
+          <Route path='/travelbot' element={<Pages.TravelBot/>}/>
           <Route path='/chatbot' element={<Pages.Chat/>}/>
           <Route path='/transcription' element={<Pages.Transcription/>}/>
           <Route path='/shop' element={<Pages.ShopPage/>}/>

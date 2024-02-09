@@ -1,8 +1,8 @@
 import React from "react";
 import { ChatBotTwo } from "../../components";
-import Chat from "../Chat";
 
-const About = () => {
+
+const TravelBot = () => {
     return (
         <div>
           <ChatBotTwo />
@@ -11,4 +11,4 @@ const About = () => {
       );
 }
 
-export default About;
+export default TravelBot;

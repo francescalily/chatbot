@@ -26,8 +26,8 @@ const NavBar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/about" style={navActive}>
-              About
+            <NavLink to="/travelbot" style={navActive}>
+              Travel Bot
             </NavLink>
           </li>
           <li>

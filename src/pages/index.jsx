@@ -1,5 +1,5 @@
 export {default as Home} from './Home'
-export {default as About} from './About'
+export {default as TravelBot} from './TravelBot'
 export {default as Chat} from './Chat'
 export {default as Transcription} from './Transcription'
 export {default as ShopPage} from './Shop'
