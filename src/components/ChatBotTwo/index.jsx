@@ -71,6 +71,7 @@ function ChatBotTwo() {
             message: data.choices[0].message.content,
             sender: 'Travel Bot'
         }]) 
+        setTyping(false);
         console.error('Unexpected response structure:', data);
     })
 }
