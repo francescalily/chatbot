@@ -86,7 +86,7 @@ function ChatBotTwo() {
     <div style={{ position: "relative", height: "650px", width: "500px"}}>
         <MainContainer>
             <ChatContainer>
-                <MessageList typingIndicator={typing ? <TypingIndicator content="Times Travel BOT is typing" /> : null }>
+                <MessageList scrollBehavior='smooth' typingIndicator={typing ? <TypingIndicator content="Times Travel BOT is typing" /> : null }>
                     {messages.map((message, i) => {
                         return <Message key={i} model={message} />
                     })}
