@@ -67,13 +67,11 @@ function ChatBotTwo() {
         console.log(data)
         const res = data.choices[0].message.content;
         console.log(res)
-        setMessages((messages) => [
-          ...messages,
-          {
-            role: "assistant",
-            content: res,
-          },
-        ]);
+        setMessages( [...chatMessages, {
+            message: data.choices[0].message.content,
+            sender: 'Travel Bot'
+        }]) 
+        console.error('Unexpected response structure:', data);
     })
 }
     
