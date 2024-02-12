@@ -34,13 +34,10 @@ function ChatBotTwo() {
 
     async function processMessage(chatMessages) {
         let apiMessages  = chatMessages.map((messageObject) => {
-            let role = "";
-            if(messageObject.sender === "Travel Bot") {
-                role = "assistant";
-            } else {
-                role = "user";
-            }
-            return {role: role, content: messageObject.message}
+            return {
+                role: messageObject.sender === "user" ? "user" : "assistant",
+                content: messageObject.message
+            };
         })
 
         const systemPrompt = {
@@ -82,9 +79,16 @@ function ChatBotTwo() {
 
 }
 const handleButtonClicked = async (question) => {
+    const newMessage = {
+        message: question,
+            sender: "user",
+            direction: "outgoing"
+    }
+    setMessages([...messages, newMessage]);
     setTyping(true);
-    await processMessage([{ message: question, sender: 'Travel Bot' }, ...messages]);
+    await processMessage([...messages, newMessage]);
         setShowButton(!showButton);
+        console.log(question)
   };
     
 
@@ -101,9 +105,11 @@ const handleButtonClicked = async (question) => {
                 <MessageList  scrollBehavior='smooth' typingIndicator={typing ? <TypingIndicator content="Times Travel BOT is typing" /> : null }>
                     {messages.map((message, i) => {
                         return <Message key={i} model={message} />
+                        
                     })}
+                    {showButton && <Buttons onButtonClicked={handleButtonClicked}/>}
                 
-                {showButton && <Buttons onButtonClicked={handleButtonClicked}/>}
+    
                 </MessageList>
             
                 <MessageInput placeholder='Ask question here...' onSend={handleSend}/>
