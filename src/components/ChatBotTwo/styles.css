@@ -8,3 +8,7 @@
    
 }
 
+.prompt:hover {
+    border: blue 2px solid;
+}
+

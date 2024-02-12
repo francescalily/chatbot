@@ -23,7 +23,7 @@ function Buttons({onButtonClicked}) {
   return (
     <div className='prompt__buttons'>
       {prompts.map((prompt, index) => (
-        <button onClick={() => onButtonClicked(prompt.prompt)} key={index}>{prompt.prompt}</button>
+        <button className='prompt' onClick={() => onButtonClicked(prompt.prompt)} key={index}>{prompt.prompt}</button>
       ))}
     </div>
   )
