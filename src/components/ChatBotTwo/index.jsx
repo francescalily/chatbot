@@ -7,16 +7,22 @@ import './styles.css'
 function ChatBotTwo() {
 
     const [typing, setTyping] = useState(false);
-    // const [prompts, setPrompts] = useState(['button one', ])
+    const [showButton, setShowButton] = useState(true)
     const [messages, setMessages] = useState([{
         message: "Hello, welcome to Times Travel - how may I assist your booking today",
         sender: "Travel Bot"
     }]);
 
-    const buttonOne = "City Break";
-    const buttonTwo = "Beach Getaway"
-    const buttonThree = "Adventure"
-    const buttonFour = "Winter fun"
+    const buttons = [
+        { prompt: 'City Break' },
+        { prompt: 'Beach Getaway' },
+        { prompt: 'Adventure' },
+        { prompt: 'Surpise me' },
+    ]
+
+    const toggleButton = () => {
+        setShowButton(!showButton)
+    }
 
     const handleSend = async (message) => {
         const newMessage = {
@@ -97,11 +103,11 @@ function ChatBotTwo() {
                         return <Message key={i} model={message} />
                     })}
                     <div className='prompt__buttons'>
-                    <button className='button__one'>City Break</button>
-                    <button className='button__two'>Beach Vacaction</button>
-                    <button className='button__three'>Get out of Europe</button>
-                    <button className='button__four'>Surpise Me</button>
-                     </div>
+                        { showButton && buttons.map((button, index) => (
+                            <button onClick={toggleButton} key={index}>{button.prompt}</button>
+                        ))}
+                    </div>
+                   
                 </MessageList>
                 <MessageInput placeholder='Ask question here...' onSend={handleSend}/>
             </ChatContainer>
