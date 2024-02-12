@@ -1,28 +1,17 @@
 import React, {useState} from 'react'
-
 import '/node_modules/@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
-
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react'
 import './styles.css'
+import Buttons from './buttons';
 function ChatBotTwo() {
 
     const [typing, setTyping] = useState(false);
-    const [showButton, setShowButton] = useState(true)
     const [messages, setMessages] = useState([{
         message: "Hello, welcome to Times Travel - how may I assist your booking today",
         sender: "Travel Bot"
     }]);
 
-    const buttons = [
-        { prompt: 'City Break' },
-        { prompt: 'Beach Getaway' },
-        { prompt: 'Adventure' },
-        { prompt: 'Surpise me' },
-    ]
 
-    const toggleButton = () => {
-        setShowButton(!showButton)
-    }
 
     const handleSend = async (message) => {
         const newMessage = {
@@ -39,6 +28,8 @@ function ChatBotTwo() {
 
         await processMessage(newMessages);
     }
+    
+   
 
     async function processMessage(chatMessages) {
         let apiMessages  = chatMessages.map((messageObject) => {
@@ -86,8 +77,17 @@ function ChatBotTwo() {
         setTyping(false);
         console.error('Unexpected response structure:', data);
     })
+    
+
+
+
 }
     
+const handleButtonClicked = async (question) => {
+    setTyping(true);
+    await processMessage([{ message: question, sender: 'user'}, ...messages])
+
+}
       
 
      
@@ -98,17 +98,14 @@ function ChatBotTwo() {
     <div style={{ position: "relative", height: "650px", width: "500px"}}>
         <MainContainer>
             <ChatContainer>
-                <MessageList scrollBehavior='smooth' typingIndicator={typing ? <TypingIndicator content="Times Travel BOT is typing" /> : null }>
+                <MessageList  scrollBehavior='smooth' typingIndicator={typing ? <TypingIndicator content="Times Travel BOT is typing" /> : null }>
                     {messages.map((message, i) => {
                         return <Message key={i} model={message} />
                     })}
-                    <div className='prompt__buttons'>
-                        { showButton && buttons.map((button, index) => (
-                            <button onClick={toggleButton} key={index}>{button.prompt}</button>
-                        ))}
-                    </div>
-                   
+                
+                <Buttons onButtonClicked={handleButtonClicked}/>
                 </MessageList>
+            
                 <MessageInput placeholder='Ask question here...' onSend={handleSend}/>
             </ChatContainer>
         </MainContainer>
