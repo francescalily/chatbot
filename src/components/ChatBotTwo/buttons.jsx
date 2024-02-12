@@ -3,11 +3,11 @@ import './styles.css'
 
 function Buttons({onButtonClicked}) {
 
-  const [showButton, setShowButton] = useState(true)
+  // const [showButton, setShowButton] = useState(true)
 
-  const toggleButton = () => {
-    setShowButton(!showButton);
-  };
+  // const toggleButton = () => {
+  //   setShowButton(!showButton);
+  // };
 
     const prompts = [
         { prompt: 'City Break', question: "Can you please recommend and help me go on a city break holiday?" },
@@ -16,17 +16,13 @@ function Buttons({onButtonClicked}) {
         { prompt: 'Surpise me', question: "Can you please recommend and me a great holiday. Make it a surprise!" },
     ]
 
-    const handleButtonClicked = async (question) => {
-      setTyping(true);
-      await processMessage([{ message: question, sender: 'user'}, ...messages])
-  
-  }
-    
+   
+   
 
     
   return (
     <div className='prompt__buttons'>
-      {showButton && prompts.map((prompt, index) => (
+      {prompts.map((prompt, index) => (
         <button onClick={() => onButtonClicked(prompt.prompt)} key={index}>{prompt.prompt}</button>
       ))}
     </div>

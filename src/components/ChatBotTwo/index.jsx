@@ -10,6 +10,7 @@ function ChatBotTwo() {
         message: "Hello, welcome to Times Travel - how may I assist your booking today",
         sender: "Travel Bot"
     }]);
+    const [showButton, setShowButton] = useState(true)
 
 
 
@@ -79,15 +80,14 @@ function ChatBotTwo() {
     })
     
 
-
-
 }
-    
 const handleButtonClicked = async (question) => {
     setTyping(true);
-    await processMessage([{ message: question, sender: 'user'}, ...messages])
+    await processMessage([{ message: question, sender: 'Travel Bot' }, ...messages]);
+        setShowButton(!showButton);
+  };
+    
 
-}
       
 
      
@@ -103,7 +103,7 @@ const handleButtonClicked = async (question) => {
                         return <Message key={i} model={message} />
                     })}
                 
-                <Buttons onButtonClicked={handleButtonClicked}/>
+                {showButton && <Buttons onButtonClicked={handleButtonClicked}/>}
                 </MessageList>
             
                 <MessageInput placeholder='Ask question here...' onSend={handleSend}/>
