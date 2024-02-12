@@ -1,0 +1,13 @@
+.prompt__buttons {
+   display: inline-grid;
+   /* grid-template-columns: auto 20px; */
+   grid-template-columns: auto auto;
+   margin-top: 10px;
+   column-gap: 30px;
+   row-gap: 5px;
+}
+
+.button__one {
+border-color: black;
+border: 1px solid black;
+}

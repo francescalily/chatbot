@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
     return (
         <div>
-          <h1>This is the home page</h1>
+          <h1>Site holding all experiment applications</h1>
           
         </div>
       );

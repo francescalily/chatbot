@@ -3,14 +3,20 @@ import React, {useState} from 'react'
 import '/node_modules/@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react'
-
+import './styles.css'
 function ChatBotTwo() {
 
     const [typing, setTyping] = useState(false);
+    // const [prompts, setPrompts] = useState(['button one', ])
     const [messages, setMessages] = useState([{
         message: "Hello, welcome to Times Travel - how may I assist your booking today",
         sender: "Travel Bot"
     }]);
+
+    const buttonOne = "City Break";
+    const buttonTwo = "Beach Getaway"
+    const buttonThree = "Adventure"
+    const buttonFour = "Winter fun"
 
     const handleSend = async (message) => {
         const newMessage = {
@@ -90,6 +96,12 @@ function ChatBotTwo() {
                     {messages.map((message, i) => {
                         return <Message key={i} model={message} />
                     })}
+                    <div className='prompt__buttons'>
+                    <button className='button__one'>City Break</button>
+                    <button className='button__two'>Beach Vacaction</button>
+                    <button className='button__three'>Get out of Europe</button>
+                    <button className='button__four'>Surpise Me</button>
+                     </div>
                 </MessageList>
                 <MessageInput placeholder='Ask question here...' onSend={handleSend}/>
             </ChatContainer>
