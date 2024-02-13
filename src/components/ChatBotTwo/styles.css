@@ -1,6 +1,6 @@
 * {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-   
+   text-align: left;
 }
 .prompt__buttons {
     /* display: flex;
@@ -50,10 +50,11 @@ border: 1px solid #1D1D1B;
 .message-container {
     display: flex;
     align-items: end;
-    margin-bottom: 6px;
-    margin-top: 6px;
+    margin-bottom: 12.5px;
+    margin-top: 12.5px;
     justify-content: space-between;
     overflow-x: scroll;
+  
 }
 
 .message-avatar-right {
@@ -68,6 +69,7 @@ border: 1px solid #1D1D1B;
 
 .cs-message__content {
     background-color: #F0F0F0;
+    border-radius: 20px;
 }
 
 
@@ -98,10 +100,10 @@ border: 1px solid #1D1D1B;
     color: red !important;
 }
 
-/* //get rid of times
-//white text on blue 
+/* //get rid of times DONE
+//white text on blue DONE
 //25px between each message 
 //click state blue then message afterwards full blue background 
 //left aligned bottom input text and grey box
-//all text left aligned
-//get rid of status  */
+//all text left aligned DONE
+//get rid of status  DONE*/
