@@ -10,7 +10,7 @@ function ChatBotTwo() {
 
     const [typing, setTyping] = useState(false);
     const [messages, setMessages] = useState([{
-        message: "Hi I'm your Times Travel Chatbot, I can help with inspiration on where to take your next holiday, anything you need to help plan a trip and can also show you some Times Travel offers to suit your needs. How can I help? You can enter some text or choose from the options below?",
+        message: "Hi I'm your Times Travel Chatbot, I can help with inspiration on where to take your next holiday, anything you need to help plan a trip and can also show you some Times Travel offers to suit your needs. \n \n How can I help? You can enter some text or choose from the options below?",
         sender: "Travel Bot",
         
         // sentTime: "just now",
