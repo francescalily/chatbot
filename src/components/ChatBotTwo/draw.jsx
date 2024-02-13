@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from "../../assets/timeLogo.jpeg"
+// 
 
 
 function Draw() {

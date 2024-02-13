@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import '/node_modules/@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageSeparator, MessageList, Message, Avatar, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react'
 import './styles.css'
-import avatarIco from '../../assets/avatorIco.png'
+import avatarIco from '../../assets/timeLogo.png'
 import userAvatarIco from '../../assets/userAvatarIco.png'
 import Buttons from './buttons';
 import Draw from './draw';
