@@ -1,18 +1,26 @@
 import React, {useState} from 'react'
 import '/node_modules/@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
-import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react'
+import { MainContainer, ChatContainer, MessageSeparator, MessageList, Message, Avatar, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react'
 import './styles.css'
+import avatarIco from '../../assets/avatorIco.png'
+import userAvatarIco from '../../assets/userAvatarIco.png'
 import Buttons from './buttons';
+import Draw from './draw';
 function ChatBotTwo() {
 
     const [typing, setTyping] = useState(false);
     const [messages, setMessages] = useState([{
-        message: "Hello, welcome to Times Travel - how may I assist your booking today",
-        sender: "Travel Bot"
+        message: "Hi I'm your Times Travel Chatbot, I can help with inspiration on where to take your next holiday, anything you need to help plan a trip and can also show you some Times Travel offers to suit your needs. How can I help? You can enter some text or choose from the options below?",
+        sender: "Travel Bot",
+        
+        // sentTime: "just now",
     }]);
     const [showButton, setShowButton] = useState(true)
+    const [isDrawerShowing, setDrawerShowing] = useState(false);
 
-
+    const handleToggleDrawer = () => {
+        setDrawerShowing(!isDrawerShowing);
+      };
 
     const handleSend = async (message) => {
         const newMessage = {
@@ -91,31 +99,52 @@ const handleButtonClicked = async (question) => {
         console.log(question)
   };
     
+const d = new Date();
+const currentDateTime = d.toLocaleString();
 
-      
 
      
 
-    
-
   return (
-    <div style={{ position: "relative", height: "650px", width: "500px"}}>
+    <>
+    <div className="mainDiv" style={{ display: "flex", position: "relative", height: "650px", width: "500px"}}>
         <MainContainer>
             <ChatContainer>
-                <MessageList  scrollBehavior='smooth' typingIndicator={typing ? <TypingIndicator content="Times Travel BOT is typing" /> : null }>
-                    {messages.map((message, i) => {
-                        return <Message key={i} model={message} />
-                        
-                    })}
-                    {showButton && <Buttons onButtonClicked={handleButtonClicked}/>}
-                
-    
-                </MessageList>
             
+
+            
+            <MessageList scrollBehavior='smooth' typingIndicator={typing ? <TypingIndicator content="Times Travel BOT is typing" /> : null }>
+    {messages.map((message, i) => {
+        return (
+            <React.Fragment key={i}>
+                {i === 0 || messages[i - 1].sender !== message.sender ? (
+                    <MessageSeparator content={currentDateTime} />
+                ) : null}
+                <div className="message-avatar">
+                    {message.sender === 'Travel Bot' ? (
+                        <Avatar src={avatarIco} name={"AI"} size="md" status="available" />
+                    ) : (
+                        <Avatar src={userAvatarIco} name={"User"} size="md" status="available" />
+                    )}
+                </div>
+                <Message model={message} />
+            </React.Fragment>
+        );
+    })}
+    {showButton && <Buttons onButtonClicked={handleButtonClicked}/>}
+</MessageList>
+
+
                 <MessageInput placeholder='Ask question here...' onSend={handleSend}/>
             </ChatContainer>
+            
         </MainContainer>
+        {/* <button className="openButton" onClick={handleToggleDrawer}>
+        {isDrawerShowing ? "Close" : "Open"}
+      </button>
+        <Draw show={isDrawerShowing} /> */}
     </div>
+    </>
   )
 }
 

@@ -1,8 +1,12 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 .prompt__buttons {
    display: inline-grid;
    grid-template-columns: auto 20px;
    grid-template-columns: auto auto;
-   margin-top: 180px;
+   margin-top: 120px;
    column-gap: 30px;
    row-gap: 10px;
    
@@ -12,3 +16,15 @@
     border: blue 2px solid;
 }
 
+
+.openButton {
+    background-color: beige;
+    margin-top: 270px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .mainDiv {
+    text-align: left;
+} */
