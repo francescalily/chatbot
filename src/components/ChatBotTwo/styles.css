@@ -28,3 +28,25 @@
 /* .mainDiv {
     text-align: left;
 } */
+
+.message-container {
+    display: flex;
+    align-items: end;
+    margin-bottom: 6px;
+    margin-top: 6px;
+    justify-content: space-between;
+}
+
+.message-avatar-right {
+    margin-right: 5px;
+    
+}
+
+.message-avatar-left {
+    order: 2; 
+    margin-left: 5px;
+}
+
+
+
+

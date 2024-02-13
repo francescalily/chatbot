@@ -120,19 +120,20 @@ const currentDateTime = d.toLocaleString();
                 {i === 0 || messages[i - 1].sender !== message.sender ? (
                     <MessageSeparator content={currentDateTime} />
                 ) : null}
-                <div className="message-avatar">
+                <div className="message-container">
                     {message.sender === 'Travel Bot' ? (
-                        <Avatar src={avatarIco} name={"AI"} size="md" status="available" />
+                        <Avatar className="message-avatar-right" src={avatarIco} name={"AI"} size="md" status="available" />
                     ) : (
-                        <Avatar src={userAvatarIco} name={"User"} size="md" status="available" />
+                        <Avatar className="message-avatar-left" src={userAvatarIco} name={"User"} size="md" status="available" />
                     )}
+                    <Message model={message} />
                 </div>
-                <Message model={message} />
             </React.Fragment>
         );
     })}
     {showButton && <Buttons onButtonClicked={handleButtonClicked}/>}
 </MessageList>
+
 
 
                 <MessageInput placeholder='Ask question here...' onSend={handleSend}/>
