@@ -122,9 +122,9 @@ const currentDateTime = d.toLocaleString();
                 ) : null}
                 <div className="message-container">
                     {message.sender === 'Travel Bot' ? (
-                        <Avatar className="message-avatar-right" src={avatarIco} name={"AI"} size="md" status="available" />
+                        <Avatar className="message-avatar-right" src={avatarIco} name={"AI"} size="sm" status="available" />
                     ) : (
-                        <Avatar className="message-avatar-left" src={userAvatarIco} name={"User"} size="md" status="available" />
+                        <Avatar className="message-avatar-left" src={userAvatarIco} name={"User"} size="sm" status="available" />
                     )}
                     <Message model={message} />
                 </div>
@@ -140,10 +140,6 @@ const currentDateTime = d.toLocaleString();
             </ChatContainer>
             
         </MainContainer>
-        {/* <button className="openButton" onClick={handleToggleDrawer}>
-        {isDrawerShowing ? "Close" : "Open"}
-      </button>
-        <Draw show={isDrawerShowing} /> */}
     </div>
     </>
   )
