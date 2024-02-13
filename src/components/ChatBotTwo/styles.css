@@ -22,7 +22,7 @@ white-space: pre;
     border: black 1px solid;
     display: inline-block;
   text-align: center;
-
+background-color: #3982F7;
   text-decoration: none;
 
 }
@@ -218,7 +218,9 @@ border: 1px solid #1D1D1B;
 /* //get rid of times DONE
 //white text on blue DONE
 //25px between each message DONE
-//click state blue then message afterwards full blue background 
+//click state blue then message afterwards full blue background DONE
 //left aligned bottom input text and grey box DONE
 //all text left aligned DONE
-//get rid of status  DONE*/
+//get rid of status  DONE
+//Just need to now add the extra button prompts then get Adam to join model with me*/
+
