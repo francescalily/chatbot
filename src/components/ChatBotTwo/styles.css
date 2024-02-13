@@ -47,6 +47,29 @@
     margin-left: 5px;
 }
 
+.cs-message__content {
+    background-color: #F0F0F0;
+}
 
 
+/* .cs-message.cs-message--outgoing {
+    background-color: #3982F7 !important; 
+} */
+/* #chatContainer .cs-message.cs-message--outgoing {
+    background-color: #3982F7 !important; 
+} */
 
+/* .cs-message--outgoing {
+    background-color: red !important; 
+    border-radius: 16px; 
+    border: 1px solid #ffaa33; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    max-width: 80%;
+    margin: 8px; 
+}   */
+
+.cs-message--outgoing .cs-message__content {
+    background-color: #3982F7 !important;
+    border-radius: 16px;
+    margin: 8px;
+}
