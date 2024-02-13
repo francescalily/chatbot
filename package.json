@@ -22,7 +22,8 @@
     "react-dom": "^18.2.0",
     "react-intl": "^6.6.1",
     "react-router-dom": "^6.21.3",
-    "react-spring": "^9.7.3"
+    "react-spring": "^9.7.3",
+    "scss": "^0.2.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
