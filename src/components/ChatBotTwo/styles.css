@@ -1,29 +1,47 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
-.prompt__buttons {
-   display: inline-grid;
-   grid-template-columns: auto 20px;
-   grid-template-columns: auto auto;
-   margin-top: 120px;
-   column-gap: 30px;
-   row-gap: 10px;
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
    
+}
+.prompt__buttons {
+    /* display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    overflow-x: scroll !important; */
+    display: inline-flex;
+align-items: flex-start;
+gap: 12px;
+overflow: scroll;
+white-space: pre;
+
 }
 
 .prompt:hover {
-    border: blue 2px solid;
+    border: black 1px solid;
+    display: inline-block;
+  text-align: center;
+
+  text-decoration: none;
+
 }
 
+.prompt {
+    border-radius: 30px;
+    overflow: auto;
+    border: black 1px solid;
+}
 
-.openButton {
+/* .openButton {
     background-color: beige;
     margin-top: 270px;
     height: 50px;
     justify-content: center;
     align-items: center;
-}
+    border-radius: 25000px;
+border: 1px solid #1D1D1B;
+} */
 
 /* .mainDiv {
     text-align: left;
@@ -35,6 +53,7 @@
     margin-bottom: 6px;
     margin-top: 6px;
     justify-content: space-between;
+    overflow-x: scroll;
 }
 
 .message-avatar-right {
@@ -70,6 +89,19 @@
 
 .cs-message--outgoing .cs-message__content {
     background-color: #3982F7 !important;
-    border-radius: 16px;
+    border-radius: 20px;
     margin: 8px;
+    color: white;
 }
+
+.cs-message-input__content-editor-wrapper::before {
+    color: red !important;
+}
+
+/* //get rid of times
+//white text on blue 
+//25px between each message 
+//click state blue then message afterwards full blue background 
+//left aligned bottom input text and grey box
+//all text left aligned
+//get rid of status  */

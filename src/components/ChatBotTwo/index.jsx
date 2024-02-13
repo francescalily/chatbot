@@ -5,15 +5,12 @@ import './styles.css'
 import avatarIco from '../../assets/timeLogo.png'
 import userAvatarIco from '../../assets/userAvatarIco.png'
 import Buttons from './buttons';
-import Draw from './draw';
 function ChatBotTwo() {
 
     const [typing, setTyping] = useState(false);
     const [messages, setMessages] = useState([{
         message: "Hi I'm your Times Travel Chatbot, I can help with inspiration on where to take your next holiday, anything you need to help plan a trip and can also show you some Times Travel offers to suit your needs. \n \n How can I help? You can enter some text or choose from the options below?",
         sender: "Travel Bot",
-        
-        // sentTime: "just now",
     }]);
     const [showButton, setShowButton] = useState(true)
     const [isDrawerShowing, setDrawerShowing] = useState(false);
@@ -99,16 +96,13 @@ const handleButtonClicked = async (question) => {
         console.log(question)
   };
     
-const d = new Date();
-const currentDateTime = d.toLocaleString();
 
 
-     
-
+    
   return (
     <>
     <div className="mainDiv" style={{ display: "flex", position: "relative", height: "650px", width: "500px"}}>
-        <MainContainer>
+        <MainContainer >
             <ChatContainer>
             
 
@@ -117,14 +111,12 @@ const currentDateTime = d.toLocaleString();
     {messages.map((message, i) => {
         return (
             <React.Fragment key={i}>
-                {i === 0 || messages[i - 1].sender !== message.sender ? (
-                    <MessageSeparator content={currentDateTime} />
-                ) : null}
+                
                 <div className="message-container">
                     {message.sender === 'Travel Bot' ? (
-                        <Avatar className="message-avatar-right" src={avatarIco} name={"AI"} size="sm" status="available" />
+                        <Avatar className="message-avatar-right" src={avatarIco} name={"AI"} size="sm" />
                     ) : (
-                        <Avatar className="message-avatar-left" src={userAvatarIco} name={"User"} size="sm" status="available" />
+                        null
                     )}
                     <Message model={message} />
                 </div>
@@ -136,7 +128,7 @@ const currentDateTime = d.toLocaleString();
 
 
 
-                <MessageInput placeholder='Ask question here...' onSend={handleSend}/>
+                <MessageInput placeholder='Type your response...' onSend={handleSend}/>
             </ChatContainer>
             
         </MainContainer>
