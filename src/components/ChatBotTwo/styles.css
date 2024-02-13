@@ -97,7 +97,7 @@ border: 1px solid #1D1D1B;
 }
 
 .cs-message-input__content-editor-wrapper::before {
-    color: red !important;
+    background-color: red !important;
 }
 
 /* //get rid of times DONE
