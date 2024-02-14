@@ -99,6 +99,8 @@ border: 1px solid #1D1D1B;
 }
 
 .cs-message-input {
+ 
+  margin: 5px;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -113,6 +115,7 @@ border: 1px solid #1D1D1B;
     flex-shrink: 0;
   }
   .cs-message-input__content-editor-wrapper {
+   
     border-radius: 60px;
     box-sizing: border-box;
     position: relative;
@@ -122,7 +125,6 @@ border: 1px solid #1D1D1B;
     flex-grow: 1;
   }
   .cs-message-input--disabled .cs-message-input__content-editor-wrapper {
-    
     background-color: rgba(198, 227, 250, 0.38);
     color: rgba(0, 0, 0, 0.6);
   }
