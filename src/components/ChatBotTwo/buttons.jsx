@@ -10,8 +10,8 @@ function Buttons({onButtonClicked}) {
   // };
 
     const prompts = [
-        { prompt: 'City Break', question: "Can you please recommend and help me go on a city break holiday?" },
-        { prompt: 'Beach Getaway', question: "Can you please recommend and help me go on a beach getaway holiday?" },
+        { prompt: 'Travel Inspiration', question: "Can you please send me some travel inspiration all to do with cruises, but ask questions as well" },
+        { prompt: 'Accommodation Booking', question: "Recommend me good accommodation to do with cruises" },
         { prompt: 'Adventure', question: "Can you please recommend and help me go on an adventure holiday?" },
         { prompt: 'Surpise meeeeeeeeeeeeeeeeeeeeeeeeee', question: "Can you please recommend and me a great holiday. Make it a surprise!" },
     ]

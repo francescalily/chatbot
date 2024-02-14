@@ -15,6 +15,7 @@ align-items: flex-start;
 gap: 12px;
 overflow: scroll;
 white-space: pre;
+font-size: 14px;
 
 }
 
@@ -24,6 +25,7 @@ white-space: pre;
   text-align: center;
 background-color: #3982F7;
   text-decoration: none;
+  
 
 }
 
