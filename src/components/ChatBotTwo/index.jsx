@@ -101,8 +101,8 @@ const handleButtonClicked = async (question) => {
     
   return (
     <>
-    <div className="mainDiv" style={{ display: "flex", position: "relative", height: "650px", width: "350px", borderRadius: "50px"}}>
-        <MainContainer >
+    <div className="mainDiv" style={{ display: "flex", position: "relative", height: "650px", width: "320px"}}>
+        <MainContainer style={{  borderRadius: "35px"}} >
             <ChatContainer>
             
 
