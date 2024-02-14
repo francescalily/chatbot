@@ -127,7 +127,7 @@ const handleButtonClicked = async (question) => {
 </MessageList>
 
 
-                <MessageInput placeholder='Type your response...' onSend={handleSend}/>
+                <MessageInput attachButton={false} placeholder='Type your response...' onSend={handleSend}/>
             </ChatContainer>
             
         </MainContainer>
