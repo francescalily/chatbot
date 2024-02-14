@@ -23,7 +23,7 @@ font-size: 14px;
     border: black 1px solid;
     display: inline-block;
   text-align: center;
-background-color: #3982F7;
+background-color: #4F90F8;
   text-decoration: none;
   
 
@@ -76,10 +76,10 @@ border: 1px solid #1D1D1B;
 
 
 /* .cs-message.cs-message--outgoing {
-    background-color: #3982F7 !important; 
+    background-color: #4F90F8 !important; 
 } */
 /* #chatContainer .cs-message.cs-message--outgoing {
-    background-color: #3982F7 !important; 
+    background-color: #4F90F8 !important; 
 } */
 
 /* .cs-message--outgoing {
@@ -92,13 +92,14 @@ border: 1px solid #1D1D1B;
 }   */
 
 .cs-message--outgoing .cs-message__content {
-    background-color: #3982F7 !important;
-    border-radius: 20px;
+    background-color: #4F90F8 !important;
+    /* border-radius: 40px; */
     margin: 8px;
     color: white;
 }
 
 .cs-message-input {
+  
     display: flex;
     flex-direction: row;
     position: relative;
@@ -113,19 +114,22 @@ border: 1px solid #1D1D1B;
     flex-shrink: 0;
   }
   .cs-message-input__content-editor-wrapper {
+    border-radius: 60px;
     box-sizing: border-box;
     position: relative;
     background-color: #F0F0F0;
     margin: 0;
     padding: 0.6em 0.9em;
-    border-radius: 0.7em;
+
     flex-grow: 1;
   }
   .cs-message-input--disabled .cs-message-input__content-editor-wrapper {
+    
     background-color: rgba(198, 227, 250, 0.38);
     color: rgba(0, 0, 0, 0.6);
   }
   .cs-message-input__content-editor-container {
+    
     box-sizing: border-box;
     position: relative;
     background-color: #F0F0F0;
@@ -144,8 +148,10 @@ border: 1px solid #1D1D1B;
   .cs-message-input--disabled .cs-message-input__content-editor-container {
     color: rgba(0, 0, 0, 0.6);
     background-color: transparent;
+    
   }
   .cs-message-input__content-editor {
+    
     box-sizing: border-box;
     flex-grow: 1;
     background-color: #F0F0F0;
@@ -162,21 +168,25 @@ border: 1px solid #1D1D1B;
   }
   .cs-message-input--disabled .cs-message-input__content-editor {
     background-color: transparent;
+    
     color: rgba(0, 0, 0, 0.6);
   }
   .cs-message-input__content-editor[data-placeholder]:empty:before {
     box-sizing: border-box;
+    
     content: attr(data-placeholder);
     color: rgba(0, 0, 0, 0.38);
     display: block;
     cursor: text;
   }
   .cs-message-input__tools {
+    
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
   }
   .cs-message-input__tools .cs-button {
+    
     font-size: 1.2em;
     margin-top: 0;
     margin-bottom: 0;
@@ -202,6 +212,7 @@ border: 1px solid #1D1D1B;
   
   .cs-input-toolbox {
     box-sizing: border-box;
+    
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -215,6 +226,7 @@ border: 1px solid #1D1D1B;
     border: none;
     margin: 0 0.5em 0 0;
     font-size: 1.2em;
+    
   }
 
 /* //get rid of times DONE

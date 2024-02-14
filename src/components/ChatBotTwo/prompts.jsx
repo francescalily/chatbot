@@ -9,7 +9,11 @@ const prompts = [
 
 function Prompts() {
   return (
-    <div>This wil return the other buttons</div>
+    <div className='prompt__buttons'>
+      {prompts.map((prompt, index) => (
+        <button className='prompt' onClick={() => onButtonClicked(prompt.prompt)} key={index}>{prompt.prompt}</button>
+      ))}
+    </div>
   )
 }
 
